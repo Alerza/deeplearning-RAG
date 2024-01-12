@@ -3,6 +3,7 @@
 
 import os
 from dotenv import load_dotenv, find_dotenv
+from google.colab import userdata
 
 import numpy as np
 from trulens_eval import (
@@ -28,7 +29,8 @@ def get_hf_api_key():
 
     return os.getenv("HUGGINGFACE_API_KEY")
 
-openai = OpenAI()
+openai = OpenAI(       
+    api_key=userdata.get('OPENAI_API_KEY'),)
 
 qa_relevance = (
     Feedback(openai.relevance_with_cot_reasons, name="Answer Relevance")
