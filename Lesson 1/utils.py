@@ -1,4 +1,8 @@
-#!pip install python-dotenv
+!pip install -q python-dotenv
+!pip install -q openai
+!pip install -q cohere
+!pip install -q tiktoken
+!pip install -q trulens-eval
 
 
 import os
